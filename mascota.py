@@ -1,4 +1,6 @@
-class Mascota:
+from aplicacion_mascotas import AplicacionMascotas
+
+class mascota:
 
     def __init__(self, nombre, edad, raza, peso, costo_consulta):
         self.nombre = nombre

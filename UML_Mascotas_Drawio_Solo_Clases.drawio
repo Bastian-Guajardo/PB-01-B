@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" modified="2026-08-27T21:30:00.000Z" agent="ChatGPT" version="26.0.0">
+  <diagram id="uml-mascotas-limpio" name="UML Mascotas">
+    <mxGraphModel dx="1200" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CLASE MASCOTA -->
+        <mxCell id="Mascota" value="&lt;b&gt;Mascota&lt;/b&gt;&lt;hr&gt;- nombre: str&lt;br&gt;- edad: int&lt;br&gt;- raza: str&lt;br&gt;- peso: float&lt;br&gt;- __costo_consulta: float&lt;hr&gt;+ get_costo_consulta(): float&lt;br&gt;+ set_costo_consulta(costo: float): void&lt;br&gt;+ descripcion(): str" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#666666;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="405" y="50" width="360" height="245" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASE PERRO -->
+        <mxCell id="Perro" value="&lt;b&gt;Perro&lt;/b&gt;&lt;hr&gt;- tamaño: str&lt;br&gt;- cantidad_vacunas: int&lt;hr&gt;+ descripcion(): str&lt;br&gt;+ mostrar_informacion(): void" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#666666;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="410" width="280" height="155" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASE GATO -->
+        <mxCell id="Gato" value="&lt;b&gt;Gato&lt;/b&gt;&lt;hr&gt;- color_pelaje: str&lt;br&gt;- vidas: int&lt;hr&gt;+ descripcion(): str&lt;br&gt;+ mostrar_informacion(): void" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#666666;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="405" y="410" width="280" height="155" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASE CONEJO -->
+        <mxCell id="Conejo" value="&lt;b&gt;Conejo&lt;/b&gt;&lt;hr&gt;- color_pelaje: str&lt;br&gt;- tipo_alimentacion: str&lt;hr&gt;+ descripcion(): str&lt;br&gt;+ mostrar_informacion(): void" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#666666;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="750" y="410" width="280" height="155" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASE APLICACION -->
+        <mxCell id="AplicacionMascotas" value="&lt;b&gt;AplicacionMascotas&lt;/b&gt;&lt;hr&gt;- mascotas: list[Mascota]&lt;hr&gt;+ agregar_mascota(mascota: Mascota): void&lt;br&gt;+ mostrar_catalogo(): void&lt;br&gt;+ calcular_costo_total(): float" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#666666;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="980" y="90" width="280" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- HERENCIA: PERRO -> MASCOTA -->
+        <mxCell id="herenciaPerro" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="Perro" target="Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="350"/>
+              <mxPoint x="585" y="350"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- HERENCIA: GATO -> MASCOTA -->
+        <mxCell id="herenciaGato" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="Gato" target="Mascota">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- HERENCIA: CONEJO -> MASCOTA -->
+        <mxCell id="herenciaConejo" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="Conejo" target="Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="350"/>
+              <mxPoint x="585" y="350"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- AGREGACION: APLICACION -> MASCOTA -->
+        <mxCell id="agregacion" value="0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;startArrow=diamond;startFill=0;endArrow=none;strokeColor=#333333;strokeWidth=1.5;fontSize=13;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="AplicacionMascotas" target="Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="180"/>
+              <mxPoint x="850" y="180"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
