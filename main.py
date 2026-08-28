@@ -3,40 +3,64 @@
 from perro import perro
 from gato import gato
 from conejo import conejo
-from mascota import mascota
+from mascota import Mascota
 from aplicacion_mascotas import AplicacionMascotas
 
 def main():
-    pass
-
-    print("Aqui va tu logica principal del programa")  
-
-    # ================
-    # agregar mascota
-    # ================
-
-    perro_1 = mascota("edgar",6,"shar pie",25,420)
-    perro_2 = mascota("Rafael",8,"bulldog",32,550)
-    conejo_1 = mascota("carlos",10,"de nieve",15,200)
-    gato_1 = mascota (" bastian",4,"egipcio",10,100)
-    # ========
-    # detalles Mascotas
-    # ========
-
-    perro_1 = perro ("mediano",5) 
-    perro_2 = perro ("grande",3) 
-    gato_1 = gato ("rubio", 99)
-    conejo_1 = conejo("blanco","hamburguesas")
+    try:
+    
+    # APLICACION
+        app = AplicacionMascotas()
+    
+        
+        perro_1 = perro("edgar",6,"shar pie",25,420)
+        
+        perro_2 = perro("Rafael",8,"bulldog",32,550)
+        
+        conejo_1 = conejo ("carlos",10,"de nieve",15,200)
+        
+        gato_1 = gato(" bastian",4,"egipcio",10,100) 
+        
+        print("\n DESCRIPCION DE LAS MASCOTAS \n")
+        
+        print(perro_1.descripcion())
+        print(perro_2.descripcion())
+        print(gato_1.descripcion())
+        print(conejo_1.descripcion())
     
     
+        print("\n # modificacion consulta #")
+        
+        print(" error invalido\n")
+        
+        perro_2.set_costo_consulta(0)
 
-    # ========
-    # ASOCIAR mascotas
-    # ============
-    print("las mascotas registradas son:",)
-  
+        print("\n Valor de la consulta \n")
+        
+        perro_2.set_costo_consulta(100)
+        
+        
+        print("\n Agregar una mascota \n")
+        
+        app.agregar_mascota(perro_1)
+        
+        app.agregar_mascota(perro_2)
+        
+        app.agregar_mascota(gato_1)
+        
+        app.agregar_mascota(conejo_1)
     
 
+        print("\n Mostrar el catalogo y la consulta ")
+        
+        app.mostrar_catalogo()
+        
+        costo_total = app.calcular_costo_total()
+        print(f"Costo total de consultas: ${costo_total}")
+        
+    except ValueError as e:
+        print(e)
+    
+    
 if __name__ == "__main__":
     main()
-   
